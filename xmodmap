@@ -1,0 +1,21 @@
+! define left and right ctrl
+clear control
+keycode 37  = Control_L NoSymbol Control_L NoSymbol Control_L
+keycode 108 = Control_R NoSymbol Control_R NoSymbol Control_R
+add control = Control_L Control_R
+
+! disable nonbreakable space
+keycode 65 = space space
+
+! switch right cmd with alt/ISO_Level3_Shift
+clear mod4
+clear mod5
+keycode 134 = ISO_Level3_Shift
+add mod5 = ISO_Level3_Shift
+
+! switch left super and alt
+clear Mod1
+remove mod1 = Alt_L
+remove mod4 = Super_L
+add mod4 = Alt_L
+add mod1 = Super_L
