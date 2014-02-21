@@ -41,7 +41,13 @@ make -C /lib/modules/`uname -r`/build  M=`pwd`  modules
 # copy new module into proper directory
 OLDD=`pwd`
 cd /lib/modules/`uname -r`/kernel/drivers/hid/
-sudo cp hid-apple.ko hid-apple.ko_
+
+# backup old file, but only if it wasn't backupped before
+if [ ! -f "hid-apple.ko_" ]; then 
+	sudo cp hid-apple.ko hid-apple.ko_
+fi
+
+# copy new module here
 sudo cp $OLDD/hid-apple.ko .
 
 # config apple keyboard to usable mode
