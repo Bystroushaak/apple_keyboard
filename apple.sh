@@ -2,11 +2,14 @@
 # Apple wireless keyboard module installation script
 # by Bystroushaak (bystrousak@kitakitsune.org)
 
-if [ ! -d ubuntu-precise ]; then
-	git clone git://kernel.ubuntu.com/ubuntu/ubuntu-precise.git ubuntu-precise
+UBUNTU_VERSION=`cat /etc/os-release | grep PRETTY | awk '{print $2}'`
+UBUNTU="ubuntu-$UBUNTU_VERSION"
+
+if [ ! -d $UBUNTU ]; then
+	git clone git://kernel.ubuntu.com/ubuntu/ubuntu-precise.git $UBUNTU
 fi
 
-cd ubuntu-precise
+cd $UBUNTU
 
 # check for changes in repository
 git checkout master
