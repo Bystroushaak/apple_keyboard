@@ -2,11 +2,11 @@
 # Apple wireless keyboard module installation script
 # by Bystroushaak (bystrousak@kitakitsune.org)
 
-UBUNTU_VERSION=`cat /etc/os-release | grep PRETTY | awk '{print $2}'`
+UBUNTU_VERSION=`cat /etc/os-release | grep VERSION= | cut -d "," -f 2 | awk '{print tolower($1)}'`
 UBUNTU="ubuntu-$UBUNTU_VERSION"
 
 if [ ! -d $UBUNTU ]; then
-	git clone git://kernel.ubuntu.com/ubuntu/ubuntu-precise.git $UBUNTU
+	git clone "git://kernel.ubuntu.com/ubuntu/ubuntu-$UBUNTU_VERSION.git" $UBUNTU
 fi
 
 cd $UBUNTU
