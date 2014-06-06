@@ -186,7 +186,7 @@ static int hidinput_apple_event(struct hid_device *hid, struct input_dev *input,
 	u16 fnkeycode = KEY_FN;
 	int do_translate;
 	
-	printk("hid_apple: event received. usage->code=%i, usage->type=%i, value=%i\n",usage->code,usage->type,value);
+	// printk("hid_apple: event received. usage->code=%i, usage->type=%i, value=%i\n",usage->code,usage->type,value);
 	if (swapctrlfn)
 		fnkeycode = KEY_LEFTCTRL;
 
@@ -208,7 +208,7 @@ static int hidinput_apple_event(struct hid_device *hid, struct input_dev *input,
 
 	if (trans) {
 		if (trans->flags & APPLE_FLAG_SKEY){
-			printk("hid_apple: key code - %i, use_ejectcd_as_delete - %i\n",usage->code,use_ejectcd_as_delete);
+			// printk("hid_apple: key code - %i, use_ejectcd_as_delete - %i\n",usage->code,use_ejectcd_as_delete);
 			do_translate = 1;
 			if ((usage->code == KEY_EJECTCD) && !use_ejectcd_as_delete){
 				printk("not translate!");
