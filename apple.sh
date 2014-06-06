@@ -51,7 +51,13 @@ fi
 sudo cp $OLDD/hid-apple.ko .
 
 # config apple keyboard to usable mode
-echo "options hid_apple fnmode=2 swapctrlfn=1 use_ejectcd_as_delete=1" | sudo tee -a /etc/modprobe.d/hid_apple.conf
+APPLE_CONF="/etc/modprobe.d/hid_apple.conf"
+MODULE_OPT="options hid_apple fnmode=2 swapctrlfn=1 use_ejectcd_as_delete=1"
+
+grep "$MODULE_OPT" $APPLE_CONF
+if [[ $? != 0 ]]; then
+    echo "$MODULE_OPT" | sudo tee -a $APPLE_CONF
+fi
 
 # reload driver
 sudo modprobe -r hid_apple
