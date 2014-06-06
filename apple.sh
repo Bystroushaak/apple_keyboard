@@ -6,7 +6,7 @@ UBUNTU_VERSION=`cat /etc/os-release | grep VERSION= | cut -d "," -f 2 | awk '{pr
 UBUNTU="ubuntu-$UBUNTU_VERSION"
 
 if [ ! -d $UBUNTU ]; then
-	git clone "git://kernel.ubuntu.com/ubuntu/$UBUNTU.git" $UBUNTU
+	git clone --depth=1 "git://kernel.ubuntu.com/ubuntu/$UBUNTU.git" $UBUNTU
 fi
 
 cd $UBUNTU
