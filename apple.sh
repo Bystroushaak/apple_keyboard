@@ -2,7 +2,8 @@
 # Apple wireless keyboard module installation script
 # by Bystroushaak (bystrousak@kitakitsune.org)
 
-UBUNTU_VERSION=`cat /etc/os-release | grep VERSION= | cut -d "," -f 2 | awk '{print tolower($1)}'`
+# UBUNTU_VERSION=`cat /etc/os-release | grep VERSION= | cut -d "," -f 2 | awk '{print tolower($1)}'`
+UBUNTU_VERSION=`cat /etc/os-release | grep UBUNTU_CODENAME= | cut -d "=" -f 2 | awk '{print tolower($1)}'`
 UBUNTU="ubuntu-$UBUNTU_VERSION"
 
 if [ ! -d $UBUNTU ]; then
@@ -29,11 +30,11 @@ fi
 # copy patched file
 cp ../hid-apple.c drivers/hid/hid-apple.c
 
-# make prerequisities
+make prerequisities
 make oldconfig
 make prepare
 timeout 1m make # just to make all proper tools
-
+# 
 # compile all modules
 cd drivers/hid
 make -C /lib/modules/`uname -r`/build  M=`pwd`  modules
