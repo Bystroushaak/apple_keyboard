@@ -73,8 +73,11 @@ struct apple_key_translation {
 };
 
 static const struct apple_key_translation macbookair_fn_keys[] = {
-    { KEY_LEFTALT,  KEY_LEFTMETA},
-    { KEY_LEFTMETA,  KEY_LEFTALT},
+	{ KEY_LEFTALT,   KEY_LEFTMETA},
+	{ KEY_LEFTMETA,  KEY_LEFTALT},
+	{ KEY_RIGHTALT,  KEY_RIGHTMETA},
+	{ KEY_RIGHTMETA, KEY_RIGHTALT},
+
 	{ KEY_BACKSPACE, KEY_DELETE },
 	{ KEY_ENTER,	KEY_INSERT },
 	{ KEY_F1,	KEY_BRIGHTNESSDOWN, APPLE_FLAG_FKEY },
@@ -96,10 +99,13 @@ static const struct apple_key_translation macbookair_fn_keys[] = {
 };
 
 static const struct apple_key_translation apple_fn_keys[] = {
+	{ KEY_LEFTALT,   KEY_LEFTMETA},
+	{ KEY_LEFTMETA,  KEY_LEFTALT},
+	{ KEY_RIGHTALT,  KEY_RIGHTMETA},
+	{ KEY_RIGHTMETA, KEY_RIGHTALT},
+
 	{ KEY_BACKSPACE, KEY_DELETE },
 	{ KEY_ENTER,	KEY_INSERT },
-    { KEY_LEFTALT,  KEY_LEFTMETA},
-    { KEY_LEFTMETA,  KEY_LEFTALT},
 	{ KEY_F1,	KEY_BRIGHTNESSDOWN, APPLE_FLAG_FKEY },
 	{ KEY_F2,	KEY_BRIGHTNESSUP,   APPLE_FLAG_FKEY },
 	{ KEY_F3,	KEY_SCALE,          APPLE_FLAG_FKEY },
@@ -122,10 +128,12 @@ static const struct apple_key_translation apple_fn_keys[] = {
 };
 
 static const struct apple_key_translation powerbook_fn_keys[] = {
-	{ KEY_BACKSPACE, KEY_DELETE },
-    { KEY_LEFTALT,  KEY_LEFTMETA},
-    { KEY_LEFTMETA,  KEY_LEFTALT},
+	{ KEY_LEFTALT,   KEY_LEFTMETA},
+	{ KEY_LEFTMETA,  KEY_LEFTALT},
+	{ KEY_RIGHTALT,  KEY_RIGHTMETA},
+	{ KEY_RIGHTMETA, KEY_RIGHTALT},
 
+	{ KEY_BACKSPACE, KEY_DELETE },
 	{ KEY_F1,	KEY_BRIGHTNESSDOWN,     APPLE_FLAG_FKEY },
 	{ KEY_F2,	KEY_BRIGHTNESSUP,       APPLE_FLAG_FKEY },
 	{ KEY_F3,	KEY_MUTE,               APPLE_FLAG_FKEY },
@@ -167,8 +175,11 @@ static const struct apple_key_translation powerbook_numlock_keys[] = {
 };
 
 static const struct apple_key_translation apple_iso_keyboard[] = {
-    { KEY_LEFTALT,  KEY_LEFTMETA},
-    { KEY_LEFTMETA,  KEY_LEFTALT},
+	{ KEY_LEFTALT,   KEY_LEFTMETA},
+	{ KEY_LEFTMETA,  KEY_LEFTALT},
+	{ KEY_RIGHTALT,  KEY_RIGHTMETA},
+	{ KEY_RIGHTMETA, KEY_RIGHTALT},
+
 	{ KEY_GRAVE,	KEY_102ND },
 	{ KEY_102ND,	KEY_GRAVE },
 	{ }
